@@ -1,0 +1,113 @@
+body {
+    background-color: #f2e4d7; /* Cor de fundo */
+    overflow-x: hidden; /* Evita rolagem horizontal */
+}
+
+.container-fluid {
+    padding: 0; /* Remove padding do container */
+}
+
+.d-flex {
+    height: 400px; /* Altura fixa para a seção de imagens */
+}
+
+.image-container {
+    position: relative; /* Garante que a imagem seja o pai da sobreposição */
+    overflow: hidden; /* Garante que a sobreposição não saia da área do container */
+    flex: 1; /* Faz as divs de imagem ocuparem espaço igual */
+    margin: 0; /* Remove a margem entre as imagens */
+}
+
+.img-fluid {
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    height: auto; /* Altura automática para manter proporção */
+    transition: transform 0.3s ease, filter 0.3s, box-shadow 0.3s ease; /* Transição suave */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.image-container:hover .img-fluid {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+    filter: brightness(0.5); /* Diminui o brilho ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+}
+
+.overlay {
+    position: absolute; /* Posiciona a sobreposição de forma absoluta dentro do container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Cor escura */
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.3s; /* Transição suave */
+}
+
+.image-container:hover .overlay {
+    opacity: 1; /* Fica visível ao passar o mouse sobre o container */
+}
+
+.caption {
+    position: absolute;
+    bottom: 50%; /* Ajustado para subir até a metade da imagem */
+    left: 50%;
+    transform: translate(-50%, 50%); /* Mantém a centralização horizontal */
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0; /* Inicialmente invisível */
+    transition: opacity 0.5s, transform 0.5s; /* Transição suave */
+}
+
+.image-container:hover .caption {
+    opacity: 1; /* Fica visível ao passar o mouse */
+    transform: translate(-50%, -50%); /* Move a legenda para cima */
+}
+
+.perfil:hover {
+    opacity: 0.75; /* Efeito ao passar o mouse na imagem de perfil */
+}
+
+.navbar {
+    height: 70px; /* Ajuste a altura conforme necessário */
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+}
+
+
+.menu-container {
+    display: none; /* Inicialmente escondido */
+    width: 250px; /* Largura do menu */
+    height: 100vh; /* Altura total da tela */
+    background-color: #343a40; /* Cor de fundo do menu */
+    color: white; /* Cor do texto */
+    position: fixed; /* Fixa o menu */
+    top: 70px; /* Abaixo da navbar */
+    left: 0; /* Alinhado à esquerda */
+    box-sizing: border-box; /* Inclui padding na largura */
+    z-index: 1000; /* Acima de outros elementos */
+    transform: translateX(-100%); /* Inicialmente fora da tela */
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Suaviza a transição */
+    opacity: 0; /* Inicialmente invisível */
+}
+
+.menu-container.show {
+    display: block; /* Torna visível quando ativado */
+    opacity: 1; /* Fica visível */
+    transform: translateX(0); /* Move para a posição original */
+}
+
+.content {
+    padding: 0px;
+    transition: margin-left 0.3s; /* Suaviza a transição */
+}
+
+.my-nav {
+    position: relative; /* Isso ajuda a definir um contexto para o z-index */
+    z-index: 10; /* Coloca a navbar acima de outros elementos */
+}
+
+#openBtn {
+    position: absolute; /* Posiciona o botão em relação ao seu elemento pai */
+    top: 10px; /* Ajuste a posição vertical */
+    left: 10px; /* Ajuste a posição horizontal */
+    z-index: 15; /* Certifica que o botão está acima da navbar */
+}
