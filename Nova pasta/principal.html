@@ -3,96 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="estilo/principal.css"> <!-- Link para seu CSS -->
-    
     <title>MarketRecycla</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark my-nav">
-        <button type="button" id="openBtn" class="btn btn-link text-light mr-2">
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
-            </svg>
-        </button>
-        <a class="navbar-brand" href="principal.html">MarketRecycla</a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="principal.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contato</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0" style="width: 20%; display: flex; align-items: center; white-space: nowrap;">
-                <input class="form-control mr-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" style="flex: 1; min-width: 0;">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
-            <div class="btn-group mx-3" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-link text-light">Compras Recorrentes</button>
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container-fluid">
+            <button type="button" id="openBtn" class="btn btn-link text-light me-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                </svg>
+            </button>
+            <a class="navbar-brand" href="#">MarketRecycla</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+                <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contato</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Procurando por?
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Plástico</a></li>
+                            <li><a class="dropdown-item" href="#">Vidro</a></li>
+                            <li><a class="dropdown-item" href="#">Metal</a></li>
+                            <li><a class="dropdown-item" href="#">Papel</a></li>
+                            <li><a class="dropdown-item" href="#">Eletrônicos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Link</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search" style="width: 20%; display: flex; align-items: center; white-space: nowrap;">
+                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar" style="flex: 1; min-width: 0;">
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
                 <button type="button" class="btn btn-link text-light">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
                         <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
                     </svg>
                 </button>
-                <button type="button" class="btn btn-link text-light">
-                    <a alt="cadastro" href="cadastro.html"><button class="btn btn-outline-success my-2 my-sm-0" type="button">Cadastrar</button></a>
-                </button>
-            </div>
-            <a href="cadastro.html">
-                <div class="perfil">
-                    <button type="button" class="btn btn-link text-light ml-3">
+                <a href="cadastro.html">
+                    <button type="button" class="btn btn-link text-light ms-3">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                             <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
                             <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
                         </svg>
                     </button>
-                </div>
-            </a>
+                </a>
+            </div>
         </div>
     </nav>
+    
     <main class="content">
-        <div id="menuContainer" class="menu-container">
-            <h2>Menu</h2>
-            <p>Conteúdo do Menu</p>
+        <div id="menuContainer" class="menu-container" style="display: none;">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-dark text-white shadow-item-hover">An item</li>
+                <li class="list-group-item bg-dark text-white shadow-item-hover">A second item</li>
+                <li class="list-group-item bg-dark text-white shadow-item-hover">A third item</li>
+                <li class="list-group-item bg-dark text-white shadow-item-hover">A fourth item</li>
+                <li class="list-group-item bg-dark text-white shadow-item-hover">And a fifth one</li>
+            </ul>
         </div>
         <div class="container-fluid">
             <div class="d-flex no-gutters">
                 <div class="image-container">
-                    <img src="imagens/Plastico.png" alt="Plástico" class="img-fluid">
+                    <img src="imagens/Plastico.png" alt="Imagem de Plástico" class="img-fluid">
                     <div class="overlay"></div>
                     <div class="caption">Plástico</div>
                 </div>
                 <div class="image-container">
-                    <img src="imagens/Vidro.png" alt="Vidro" class="img-fluid">
+                    <img src="imagens/Vidro.png" alt="Imagem de Vidro" class="img-fluid">
                     <div class="overlay"></div>
                     <div class="caption">Vidro</div>
                 </div>
                 <div class="image-container">
-                    <img src="imagens/Metal.png" alt="Metal" class="img-fluid">
+                    <img src="imagens/Metal.png" alt="Imagem de Metal" class="img-fluid">
                     <div class="overlay"></div>
                     <div class="caption">Metal</div>
                 </div>
                 <div class="image-container">
-                    <img src="imagens/Papel.png" alt="Papel" class="img-fluid">
+                    <img src="imagens/Papel.png" alt="Imagem de Papel" class="img-fluid">
                     <div class="overlay"></div>
                     <div class="caption">Papel</div>
                 </div>
                 <div class="image-container">
-                    <img src="imagens/Eletronicos.png" alt="Eletrônicos" class="img-fluid">
+                    <img src="imagens/Eletronicos.png" alt="Imagem de Eletrônicos" class="img-fluid">
                     <div class="overlay"></div>
                     <div class="caption">Eletrônicos</div>
                 </div>
             </div>
         </div>
     </main>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="javaScript.js"></script>
 </body>
 </html>
