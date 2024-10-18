@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var menuContainer = document.getElementById("menuContainer");
-    menuContainer.style.display = "none"; // Oculta o menu inicialmente
+    const menuContainer = document.getElementById("menuContainer");
+    const openBtn = document.getElementById("openBtn");
 
-    document.getElementById("openBtn").addEventListener("click", function() {
-        if (menuContainer.style.display === "none") {
+    // Inicializa o menu como oculto
+    menuContainer.style.display = "none"; 
+
+    openBtn.addEventListener("click", function() {
+        const isMenuVisible = menuContainer.classList.contains('show');
+
+        if (!isMenuVisible) {
             menuContainer.style.display = "block"; // Exibe o menu
             setTimeout(() => {
                 menuContainer.classList.add('show'); // Adiciona a classe show
