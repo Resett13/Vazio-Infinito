@@ -1,0 +1,5 @@
+body {
+    background-image: url('../imagens/Fundo.png');
+    background-repeat: no-repeat;
+    background-size: cover; /* Para garantir que a imagem cubra toda a tela */
+}
