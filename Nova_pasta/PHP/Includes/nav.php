@@ -19,7 +19,7 @@
                     <a class="nav-link active" aria-current="page" href="principal.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre</a>
+                    <a class="nav-link" href="Sobre.php">Sobre</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contato</a>

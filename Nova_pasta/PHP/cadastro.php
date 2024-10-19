@@ -17,7 +17,7 @@
     <main>
 
         <div class="container">
-            <div class="row justify-content-center" style="margin-top: 100px;">
+            <div class="row justify-content-center" style="margin-top: 70px;margin-bottom: 5%;">
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header text-center">
@@ -45,7 +45,7 @@
                             </form>
                         </div>
                         <div class="card-footer text-center">
-                            <a href="login.html">Já tem uma conta? Faça login</a>
+                            <a href="Login.php">Já tem uma conta? Faça login</a>
                         </div>
                     </div>
                 </div>
